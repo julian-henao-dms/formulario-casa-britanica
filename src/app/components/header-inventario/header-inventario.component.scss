@@ -1,0 +1,28 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-casa-britanica {
+    background-color: #000;
+    border-radius: 0;
+}
+
+.title-container-cb h1 {
+    color: #fff;
+}
+
+.header-info-cb .codigo-revision-fecha li {
+    color: #fff;
+}
+
+form-casa-britanica {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.cb-full-width {
+    width: 100%;
+}

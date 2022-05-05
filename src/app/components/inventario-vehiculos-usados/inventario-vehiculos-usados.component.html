@@ -1,0 +1,53 @@
+<mat-card class="form-inventario-v-usados">
+    <form class="form-casa-britanica">
+        <div class="container-form-cb">
+            <div class="block-inputs-cb">
+                <mat-form-field class="cb-full-width" appearance="fill">
+                    <mat-label>Consignación:</mat-label>
+                    <input matInput placeholder="Consignación" value="400000">
+                </mat-form-field>
+                <mat-form-field class="cb-full-width" appearance="fill">
+                    <mat-label>Retoma:</mat-label>
+                    <input matInput placeholder="Retoma" value="400000">
+                </mat-form-field>
+                <mat-form-field class="cb-full-width" appearance="fill">
+                    <mat-label>Otros:</mat-label>
+                    <input matInput placeholder="Otros" value="400000">
+                </mat-form-field>
+                <mat-form-field class="cb-full-width" appearance="fill">
+                    <mat-label>Placa:</mat-label>
+                    <input matInput placeholder="Placa" value="400000">
+                </mat-form-field>
+                <mat-form-field class="cb-full-width" appearance="fill">
+                    <mat-label># Interno:</mat-label>
+                    <input matInput placeholder="#Interno" value="400000">
+                </mat-form-field>
+
+            </div>
+            <div class="block-inputs-cb">
+
+                <mat-form-field class="cb-full-width" appearance="fill">
+                    <mat-label>Asesor:</mat-label>
+                    <input matInput placeholder="Asesor" value="400000">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Fecha</mat-label>
+                    <!-- <input matInput [matDatepicker]="picker" [(ngModel)]="data.fecha" required name="fecha">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker> -->
+                </mat-form-field>
+                <mat-form-field class="cb-full-width" appearance="fill">
+                    <mat-label>Sala:</mat-label>
+                    <input matInput placeholder="Sala" value="400000">
+                </mat-form-field>
+
+                <mat-form-field class="cb-full-width" appearance="fill">
+                    <mat-label>Hora:</mat-label>
+                    <input matInput type="time" placeholder="Hora" [(ngModel)]="data.hora" required name="hora">
+                </mat-form-field>
+
+            </div>
+        </div>
+    </form>
+</mat-card>
