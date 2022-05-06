@@ -1,53 +1,187 @@
-<mat-card class="form-inventario-v-usados">
-    <form class="form-casa-britanica">
-        <div class="container-form-cb">
-            <div class="block-inputs-cb">
-                <mat-form-field class="cb-full-width" appearance="fill">
-                    <mat-label>Consignación:</mat-label>
-                    <input matInput placeholder="Consignación" value="400000">
-                </mat-form-field>
-                <mat-form-field class="cb-full-width" appearance="fill">
-                    <mat-label>Retoma:</mat-label>
-                    <input matInput placeholder="Retoma" value="400000">
-                </mat-form-field>
-                <mat-form-field class="cb-full-width" appearance="fill">
-                    <mat-label>Otros:</mat-label>
-                    <input matInput placeholder="Otros" value="400000">
-                </mat-form-field>
-                <mat-form-field class="cb-full-width" appearance="fill">
-                    <mat-label>Placa:</mat-label>
-                    <input matInput placeholder="Placa" value="400000">
-                </mat-form-field>
-                <mat-form-field class="cb-full-width" appearance="fill">
-                    <mat-label># Interno:</mat-label>
-                    <input matInput placeholder="#Interno" value="400000">
-                </mat-form-field>
+<mat-card>
+    <form (ngSubmit)="onSubmit(data)" #inventarioVehiculoUsadoForm="ngForm">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Consignación:</mat-label>
+                <input matInput [(ngModel)]="data.consignacion" placeholder="Consignación" name="consignacion" value="400000">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Retoma:</mat-label>
+                <input matInput [(ngModel)]="data.retoma" placeholder="Retoma" name="retoma" value="Retoma">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Otros:</mat-label>
+                <input matInput [(ngModel)]="data.otros" placeholder="Otros" name="otros" value="Otros">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Placa:</mat-label>
+                <input matInput [(ngModel)]="data.placa" placeholder="Placa" name="placa" value="DSF-255">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label># Interno:</mat-label>
+                <input matInput [(ngModel)]="data.interno" placeholder="#Interno" name="interno" value="AS5452">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Asesor:</mat-label>
+                <input matInput [(ngModel)]="data.asesor" placeholder="Asesor" name="asesor" value="Juan Perez">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Sala:</mat-label>
+                <input matInput [(ngModel)]="data.sala" placeholder="Sala" name="sala" value="Sala B">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
 
-            </div>
-            <div class="block-inputs-cb">
+            <mat-form-field appearance="fill">
+                <mat-label>Hora:</mat-label>
+                <input matInput type="time" placeholder="Hora" [(ngModel)]="data.hora" required name="hora">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Marca:</mat-label>
+                <input matInput [(ngModel)]="data.consignacion" placeholder="Marca" name="marca" value="Toyota">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Referencia:</mat-label>
+                <input matInput [(ngModel)]="data.retoma" placeholder="Referencia" name="referencia" value="Prado">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Modelo:</mat-label>
+                <input matInput [(ngModel)]="data.otros" placeholder="Modelo" name="modelo" value="1988">
+            </mat-form-field>
+        </div>
+        <div>
+            <section class="example-section">
+                <label id="cbradio-group-label">Combustible</label>
+                <mat-radio-group aria-label="Combustible" [(ngModel)]="data.combustible" required name="combustible">
+                    <mat-radio-button class="cb-radio-button" [value]="gasolina">Gasolina</mat-radio-button>
+                    <mat-radio-button class="cb-radio-button" [value]="diesel">Diesel</mat-radio-button>
+                </mat-radio-group>
+            </section>
 
-                <mat-form-field class="cb-full-width" appearance="fill">
-                    <mat-label>Asesor:</mat-label>
-                    <input matInput placeholder="Asesor" value="400000">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Fecha</mat-label>
-                    <!-- <input matInput [matDatepicker]="picker" [(ngModel)]="data.fecha" required name="fecha">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker> -->
-                </mat-form-field>
-                <mat-form-field class="cb-full-width" appearance="fill">
-                    <mat-label>Sala:</mat-label>
-                    <input matInput placeholder="Sala" value="400000">
-                </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Kilometraje:</mat-label>
+                <input matInput [(ngModel)]="data.kilometraje" placeholder="Kilometraje" name="kilometraje" value="Toyota">
+            </mat-form-field>
 
-                <mat-form-field class="cb-full-width" appearance="fill">
-                    <mat-label>Hora:</mat-label>
-                    <input matInput type="time" placeholder="Hora" [(ngModel)]="data.hora" required name="hora">
-                </mat-form-field>
+            <section class="example-section">
+                <label id="cbradio-group-label" class="example-margin">Transmisión</label>
+                <mat-radio-group aria-label="Transmisión" [(ngModel)]="data.transmision" required name="transmision">
+                    <mat-radio-button class="cb-radio-button" [value]="mecanica">Mecánica</mat-radio-button>
+                    <mat-radio-button class="cb-radio-button" [value]="automatica">Automática</mat-radio-button>
+                </mat-radio-group>
+            </section>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Color:</mat-label>
+                <input matInput [(ngModel)]="data.color" placeholder="Color" name="color" value="Rojo">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Cilindraje:</mat-label>
+                <input matInput [(ngModel)]="data.cilindraje" placeholder="Cilindraje" name="cilindraje" value="3CC">
+            </mat-form-field>
 
+            <section class="example-section">
+                <label id="cbradio-group-label" class="example-margin">Tracción</label>
+                <mat-radio-group aria-label="Tracción" [(ngModel)]="data.traccion" required name="traccion">
+                    <mat-radio-button class="cb-radio-button" [value]="t4x2">4X2</mat-radio-button>
+                    <mat-radio-button class="cb-radio-button" [value]="t4x4">4X4</mat-radio-button>
+                </mat-radio-group>
+            </section>
+        </div>
+        <div>
+            <section class="example-section">
+                <label id="cbradio-group-label" class="example-margin">Cojineria</label>
+                <mat-radio-group aria-label="Cojineria" [(ngModel)]="data.cojineria" required name="cojineria">
+                    <mat-radio-button class="cb-radio-button" [value]="tela">Tela</mat-radio-button>
+                    <mat-radio-button class="cb-radio-button" [value]="cuero">Cuero</mat-radio-button>
+                </mat-radio-group>
+            </section>
+            <section class="example-section">
+                <label id="cbradio-group-label" class="example-margin">Linea</label>
+                <mat-radio-group aria-label="Linea" [(ngModel)]="data.linea" required name="linea">
+                    <mat-radio-button class="cb-radio-button" [value]="nb">NB</mat-radio-button>
+                    <mat-radio-button class="cb-radio-button" [value]="hb">HB</mat-radio-button>
+                    <mat-radio-button class="cb-radio-button" [value]="qp">QP</mat-radio-button>
+                </mat-radio-group>
+            </section>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Seleccione un estado</mat-label>
+                <mat-select>
+                    <mat-option>Ninguno</mat-option>
+                    <mat-option value="rayado_leve">Rayado Leve</mat-option>
+                    <mat-option value="rayado_fuerte">Rayado Fuerte</mat-option>
+                    <mat-option value="golpe_leve">Golpe Leve</mat-option>
+                    <mat-option value="golpe_fuerte">Golpe Fuerte</mat-option>
+                    <mat-option value="descuadre">Descuadre</mat-option>
+                    <mat-option value="corrosion">Corrosión</mat-option>
+                    <mat-option value="fisurado">Fisurado</mat-option>
+                    <mat-option value="pintura_manchada">Pintura Manchada</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <h3>Porcentaje Vida LLantas(%)</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Delantera Izquierda:</mat-label>
+                <input matInput [(ngModel)]="data.vida_llanta_del_izq" placeholder="Delantera Izquierda" name="vida_llanta_del_izq" value="20">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Marca Del. Izq:</mat-label>
+                <input matInput [(ngModel)]="data.marca_llanta_del_izq" placeholder="Marca Del. Izq" name="marca_llanta_del_izq" value="Micheline">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Delantera Derecha:</mat-label>
+                <input matInput [(ngModel)]="data.vida_llanta_del_der" placeholder="Delantera derecha" name="vida_llanta_del_der" value="50">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Marca Del. Der:</mat-label>
+                <input matInput [(ngModel)]="data.marca_llanta_del_der" placeholder="Marca Del. Der" name="marca_llanta_del_der" value="Goodyeard">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Trasera Derecha:</mat-label>
+                <input matInput [(ngModel)]="data.vida_llanta_tras_der" placeholder="Trasera Derecha" name="vida_llanta_tras_der" value="50">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Marca Tras. Der:</mat-label>
+                <input matInput [(ngModel)]="data.marca_llanta_tras_der" placeholder="Marca Tras. Der" name="marca_llanta_tras_der" value="Goodyeard">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Trasera Izquierda:</mat-label>
+                <input matInput [(ngModel)]="data.vida_llanta_tras_izq" placeholder="Trasera Izquierda" name="vida_llanta_tras_izq" value="50">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Marca Tras. Izq:</mat-label>
+                <input matInput [(ngModel)]="data.marca_llanta_tras_izq" placeholder="Marca Tras. Izq" name="marca_llanta_tras_izq" value="Goodyeard">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Observaciones</mat-label>
+                <textarea matInput placeholder="Observaciones llantas" [(ngModel)]="data.observacion_llanta" name="observacion_llanta"></textarea>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <h3>Documentos</h3>
+            <div>
+                <section class="example-section">
+                    <label class="example-margin">Align:</label>
+                    <mat-checkbox class="example-margin" [(ngModel)]="data.rin" name="rin"></mat-checkbox>
+                    <mat-checkbox class="example-margin" [(ngModel)]="data.tapa" name="tapa"></mat-checkbox>
+                </section>
             </div>
         </div>
+
+
     </form>
 </mat-card>
