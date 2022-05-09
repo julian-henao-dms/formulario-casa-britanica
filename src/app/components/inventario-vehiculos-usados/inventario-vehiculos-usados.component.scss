@@ -44,6 +44,11 @@ label.cbradio-group-label {
     width: 100%;
 }
 
+.porcentaje-llanta {
+    display: flex;
+    justify-content: space-around;
+}
+
 @media (max-width: 800px) {
     .inventario-bloque {
         display: flex;

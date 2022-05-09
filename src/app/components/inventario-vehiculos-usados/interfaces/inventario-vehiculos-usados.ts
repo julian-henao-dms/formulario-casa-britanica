@@ -24,10 +24,12 @@ export interface InventarioVehiculosUsados {
     vida_llanta_del_der : number;
     vida_llanta_tras_izq : number;
     vida_llanta_tras_der : number;
+    vida_llanta_repuesto : number;
     marca_llanta_del_izq : string;
     marca_llanta_del_der : string;
     marca_llanta_tras_izq : string;
     marca_llanta_tras_der : string;
+    marca_llanta_repuesto : string;
     observacion_llanta : string;
     rin_del_der : string ;
     tapa_del_der : string;

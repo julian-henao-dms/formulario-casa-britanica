@@ -106,6 +106,7 @@
                     <mat-radio-button class="cb-radio-button" [value]="cuero">Cuero</mat-radio-button>
                 </mat-radio-group>
             </section>
+            <section class="example-section radio-options-cb"></section>
             <section class="example-section radio-options-cb">
                 <label class="cbradio-group-label" class="example-margin">Linea</label>
                 <mat-radio-group aria-label="Linea" [(ngModel)]="data.linea" required name="linea">
@@ -116,6 +117,9 @@
             </section>
         </div>
         <div class="inventario-bloque b7">
+            <figure>
+                <img src="./assets/images/vistas-coche-cb.jpg" alt="">
+            </figure>
             <mat-form-field appearance="fill">
                 <mat-label>Seleccione un estado</mat-label>
                 <mat-select>
@@ -132,43 +136,67 @@
             </mat-form-field>
         </div>
         <div class="inventario-bloque b8">
-            <h3>Porcentaje Vida LLantas(%)</h3>
-            <mat-form-field appearance="fill">
-                <mat-label>Delantera Izquierda:</mat-label>
-                <input matInput [(ngModel)]="data.vida_llanta_del_izq" placeholder="Delantera Izquierda" name="vida_llanta_del_izq" value="20">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Marca Del. Izq:</mat-label>
-                <input matInput [(ngModel)]="data.marca_llanta_del_izq" placeholder="Marca Del. Izq" name="marca_llanta_del_izq" value="Micheline">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Delantera Derecha:</mat-label>
-                <input matInput [(ngModel)]="data.vida_llanta_del_der" placeholder="Delantera derecha" name="vida_llanta_del_der" value="50">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Marca Del. Der:</mat-label>
-                <input matInput [(ngModel)]="data.marca_llanta_del_der" placeholder="Marca Del. Der" name="marca_llanta_del_der" value="Goodyeard">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Trasera Derecha:</mat-label>
-                <input matInput [(ngModel)]="data.vida_llanta_tras_der" placeholder="Trasera Derecha" name="vida_llanta_tras_der" value="50">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Marca Tras. Der:</mat-label>
-                <input matInput [(ngModel)]="data.marca_llanta_tras_der" placeholder="Marca Tras. Der" name="marca_llanta_tras_der" value="Goodyeard">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Trasera Izquierda:</mat-label>
-                <input matInput [(ngModel)]="data.vida_llanta_tras_izq" placeholder="Trasera Izquierda" name="vida_llanta_tras_izq" value="50">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Marca Tras. Izq:</mat-label>
-                <input matInput [(ngModel)]="data.marca_llanta_tras_izq" placeholder="Marca Tras. Izq" name="marca_llanta_tras_izq" value="Goodyeard">
-            </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Observaciones</mat-label>
-                <textarea matInput placeholder="Observaciones llantas" [(ngModel)]="data.observacion_llanta" name="observacion_llanta"></textarea>
-            </mat-form-field>
+            <h3 class="titulo-p-llanta">Porcentaje Vida LLantas(%)</h3>
+            <div class="porcentaje-llanta">
+                <mat-form-field appearance="fill">
+                    <mat-label>Delantera Izquierda:</mat-label>
+                    <input matInput [(ngModel)]="data.vida_llanta_del_izq" placeholder="Delantera Izquierda" name="vida_llanta_del_izq" value="20">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Marca Del. Izq:</mat-label>
+                    <input matInput [(ngModel)]="data.marca_llanta_del_izq" placeholder="Marca Del. Izq" name="marca_llanta_del_izq" value="Micheline">
+                </mat-form-field>
+            </div>
+            <div class="porcentaje-llanta">
+                <mat-form-field appearance="fill">
+                    <mat-label>Delantera Derecha:</mat-label>
+                    <input matInput [(ngModel)]="data.vida_llanta_del_der" placeholder="Delantera derecha" name="vida_llanta_del_der" value="50">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Marca Del. Der:</mat-label>
+                    <input matInput [(ngModel)]="data.marca_llanta_del_der" placeholder="Marca Del. Der" name="marca_llanta_del_der" value="Goodyeard">
+                </mat-form-field>
+            </div>
+            <div class="porcentaje-llanta">
+                <mat-form-field appearance="fill">
+                    <mat-label>Trasera Derecha:</mat-label>
+                    <input matInput [(ngModel)]="data.vida_llanta_tras_der" placeholder="Trasera Derecha" name="vida_llanta_tras_der" value="50">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Marca Tras. Der:</mat-label>
+                    <input matInput [(ngModel)]="data.marca_llanta_tras_der" placeholder="Marca Tras. Der" name="marca_llanta_tras_der" value="Goodyeard">
+                </mat-form-field>
+            </div>
+            <div class="porcentaje-llanta">
+                <mat-form-field appearance="fill">
+                    <mat-label>Trasera Izquierda:</mat-label>
+                    <input matInput [(ngModel)]="data.vida_llanta_tras_izq" placeholder="Trasera Izquierda" name="vida_llanta_tras_izq" value="50">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Marca Tras. Izq:</mat-label>
+                    <input matInput [(ngModel)]="data.marca_llanta_tras_izq" placeholder="Marca Tras. Izq" name="marca_llanta_tras_izq" value="Goodyeard">
+                </mat-form-field>
+            </div>
+            <div class="porcentaje-llanta">
+                <mat-form-field appearance="fill">
+                    <mat-label>Repuesto:</mat-label>
+                    <input matInput [(ngModel)]="data.vida_llanta_repuesto" placeholder="Repuesto" name="vida_llanta_repuesto" value="50">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Marca Repuesto:</mat-label>
+                    <input matInput [(ngModel)]="data.marca_llanta_repuesto" placeholder="Marca Repuesto" name="marca_llanta_repuesto" value="Goodyeard">
+                </mat-form-field>
+            </div>
+            <div class="porcentaje-llanta">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Observaciones</mat-label>
+                    <textarea matInput placeholder="Observaciones llantas" [(ngModel)]="data.observacion_llanta" name="observacion_llanta"></textarea>
+                </mat-form-field>
+            </div>
+
+
+
+
         </div>
 
         <div class="inventario-bloque b9">
