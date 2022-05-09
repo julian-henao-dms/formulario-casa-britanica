@@ -59,8 +59,8 @@
             </mat-form-field>
         </div>
         <div class="inventario-bloque b4">
-            <section class="example-section">
-                <label id="cbradio-group-label">Combustible</label>
+            <section class="example-section radio-options-cb radio-options-cb">
+                <label class="cbradio-group-label">Combustible</label>
                 <mat-radio-group aria-label="Combustible" [(ngModel)]="data.combustible" required name="combustible">
                     <mat-radio-button class="cb-radio-button" [value]="gasolina">Gasolina</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="diesel">Diesel</mat-radio-button>
@@ -72,8 +72,8 @@
                 <input matInput [(ngModel)]="data.kilometraje" placeholder="Kilometraje" name="kilometraje" value="Toyota">
             </mat-form-field>
 
-            <section class="example-section">
-                <label id="cbradio-group-label" class="example-margin">Transmisión</label>
+            <section class="example-section radio-options-cb radio-options-cb">
+                <label class="cbradio-group-label" class="example-margin">Transmisión</label>
                 <mat-radio-group aria-label="Transmisión" [(ngModel)]="data.transmision" required name="transmision">
                     <mat-radio-button class="cb-radio-button" [value]="mecanica">Mecánica</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="automatica">Automática</mat-radio-button>
@@ -90,8 +90,8 @@
                 <input matInput [(ngModel)]="data.cilindraje" placeholder="Cilindraje" name="cilindraje" value="3CC">
             </mat-form-field>
 
-            <section class="example-section">
-                <label id="cbradio-group-label" class="example-margin">Tracción</label>
+            <section class="example-section radio-options-cb">
+                <label class="cbradio-group-label" class="example-margin">Tracción</label>
                 <mat-radio-group aria-label="Tracción" [(ngModel)]="data.traccion" required name="traccion">
                     <mat-radio-button class="cb-radio-button" [value]="t4x2">4X2</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="t4x4">4X4</mat-radio-button>
@@ -99,15 +99,15 @@
             </section>
         </div>
         <div class="inventario-bloque b6">
-            <section class="example-section">
-                <label id="cbradio-group-label" class="example-margin">Cojineria</label>
+            <section class="example-section radio-options-cb">
+                <label class="cbradio-group-label" class="example-margin">Cojineria</label>
                 <mat-radio-group aria-label="Cojineria" [(ngModel)]="data.cojineria" required name="cojineria">
                     <mat-radio-button class="cb-radio-button" [value]="tela">Tela</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="cuero">Cuero</mat-radio-button>
                 </mat-radio-group>
             </section>
-            <section class="example-section">
-                <label id="cbradio-group-label" class="example-margin">Linea</label>
+            <section class="example-section radio-options-cb">
+                <label class="cbradio-group-label" class="example-margin">Linea</label>
                 <mat-radio-group aria-label="Linea" [(ngModel)]="data.linea" required name="linea">
                     <mat-radio-button class="cb-radio-button" [value]="nb">NB</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="hb">HB</mat-radio-button>
@@ -174,7 +174,7 @@
         <div class="inventario-bloque b9">
 
             <div>
-                <section class="example-section">
+                <section class="example-section radio-options-cb">
                     <label class="example-margin">Delantero Derecho:</label>
                     <mat-checkbox class="example-margin" [(ngModel)]="data.rin_del_der" name="rin_del_der"></mat-checkbox>
                     <mat-checkbox class="example-margin" [(ngModel)]="data.tapa_del_der" name="tapa_del_der"></mat-checkbox>
@@ -185,7 +185,7 @@
                 </mat-form-field>
             </div>
             <div>
-                <section class="example-section">
+                <section class="example-section radio-options-cb">
                     <label class="example-margin">Delantero Izquierdo:</label>
                     <mat-checkbox class="example-margin" [(ngModel)]="data.rin_del_izq" name="rin_del_izq"></mat-checkbox>
                     <mat-checkbox class="example-margin" [(ngModel)]="data.tapa_del_izq" name="tapa_del_izq"></mat-checkbox>
@@ -196,7 +196,7 @@
                 </mat-form-field>
             </div>
             <div>
-                <section class="example-section">
+                <section class="example-section radio-options-cb">
                     <label class="example-margin">Trasero Derecho:</label>
                     <mat-checkbox class="example-margin" [(ngModel)]="data.rin_tras_der" name="rin_tras_der"></mat-checkbox>
                     <mat-checkbox class="example-margin" [(ngModel)]="data.tapa_tras_der" name="tapa_tras_der"></mat-checkbox>
@@ -207,7 +207,7 @@
                 </mat-form-field>
             </div>
             <div>
-                <section class="example-section">
+                <section class="example-section radio-options-cb">
                     <label class="example-margin">Trasero Izquierdo:</label>
                     <mat-checkbox class="example-margin" [(ngModel)]="data.rin_tras_izq" name="rin_tras_izq"></mat-checkbox>
                     <mat-checkbox class="example-margin" [(ngModel)]="data.tapa_tras_izq" name="tapa_tras_izq"></mat-checkbox>
@@ -225,22 +225,22 @@
         <div class="inventario-bloque b10">
             <h3>Documentos</h3>
             <div>
-                <section class="example-section">
-                    <label id="cbradio-group-label">Matrícula</label>
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Matrícula</label>
                     <mat-radio-group aria-label="Matricula" [(ngModel)]="data.matricula" required name="matricula">
                         <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                         <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
                     </mat-radio-group>
                 </section>
-                <section class="example-section">
-                    <label id="cbradio-group-label">Soat</label>
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Soat</label>
                     <mat-radio-group aria-label="Soat" [(ngModel)]="data.soat" required name="soat">
                         <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                         <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
                     </mat-radio-group>
                 </section>
-                <section class="example-section">
-                    <label id="cbradio-group-label">RTM</label>
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">RTM</label>
                     <mat-radio-group aria-label="RTM" [(ngModel)]="data.rtm" required name="rtm">
                         <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                         <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -253,83 +253,97 @@
             </div>
         </div>
         <div class="inventario-bloque b11">
-            <section class="example-section">
-                <label id="cbradio-group-label">Llaves</label>
-                <mat-radio-group aria-label="Llaves" [(ngModel)]="data.llaves" required name="llaves">
-                    <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section">
-                <label id="cbradio-group-label">Repuesto Llaves</label>
-                <mat-radio-group aria-label="Repuesto Llaves" [(ngModel)]="data.repuesto_llaves" required name="repuesto_llaves">
-                    <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section">
-                <label id="cbradio-group-label">Manual</label>
-                <mat-radio-group aria-label="Manual" [(ngModel)]="data.manual" required name="manual">
-                    <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section">
-                <label id="cbradio-group-label">Encendedor</label>
-                <mat-radio-group aria-label="Encendedor" [(ngModel)]="data.encendedor" required name="encendedor">
-                    <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section">
-                <label id="cbradio-group-label">Cruceta</label>
-                <mat-radio-group aria-label="Cruceta" [(ngModel)]="data.cruceta" required name="cruceta">
-                    <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section">
-                <label id="cbradio-group-label">Item Llave</label>
-                <mat-radio-group aria-label="Item Llave" [(ngModel)]="data.item_llave" required name="item_llave">
-                    <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section">
-                <label id="cbradio-group-label">Trinquete Reversible</label>
-                <mat-radio-group aria-label="Trinquete Reversible" [(ngModel)]="data.trinquete_reversible" required name="trinquete_reversible">
-                    <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section">
-                <label id="cbradio-group-label">Gato</label>
-                <mat-radio-group aria-label="Gato" [(ngModel)]="data.gato" required name="gato">
-                    <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section">
-                <label id="cbradio-group-label">Kit de Herramientas</label>
-                <mat-radio-group aria-label="Kit de Herramientas" [(ngModel)]="data.kit_herramientas" required name="kit_herramientas">
-                    <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section">
-                <label id="cbradio-group-label">Antena</label>
-                <mat-radio-group aria-label="Antena" [(ngModel)]="data.antena" required name="antena">
-                    <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section">
-                <label id="cbradio-group-label">Cubre Maletero</label>
-                <mat-radio-group aria-label="Cubre Maletero" [(ngModel)]="data.cubre_maletero" required name="cubre_maletero">
-                    <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                </mat-radio-group>
-            </section>
+            <div class="accesorios-radio-btn">
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Llaves</label>
+                    <mat-radio-group aria-label="Llaves" [(ngModel)]="data.llaves" required name="llaves">
+                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Repuesto Llaves</label>
+                    <mat-radio-group aria-label="Repuesto Llaves" [(ngModel)]="data.repuesto_llaves" required name="repuesto_llaves">
+                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Manual</label>
+                    <mat-radio-group aria-label="Manual" [(ngModel)]="data.manual" required name="manual">
+                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+            </div>
+            <div class="accesorios-radio-btn">
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Encendedor</label>
+                    <mat-radio-group aria-label="Encendedor" [(ngModel)]="data.encendedor" required name="encendedor">
+                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Cruceta</label>
+                    <mat-radio-group aria-label="Cruceta" [(ngModel)]="data.cruceta" required name="cruceta">
+                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Item Llave</label>
+                    <mat-radio-group aria-label="Item Llave" [(ngModel)]="data.item_llave" required name="item_llave">
+                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+
+            </div>
+            <div class="accesorios-radio-btn">
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Trinquete Reversible</label>
+                    <mat-radio-group aria-label="Trinquete Reversible" [(ngModel)]="data.trinquete_reversible" required name="trinquete_reversible">
+                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Gato</label>
+                    <mat-radio-group aria-label="Gato" [(ngModel)]="data.gato" required name="gato">
+                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Kit de Herramientas</label>
+                    <mat-radio-group aria-label="Kit de Herramientas" [(ngModel)]="data.kit_herramientas" required name="kit_herramientas">
+                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+
+            </div>
+            <div class="accesorios-radio-btn">
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Antena</label>
+                    <mat-radio-group aria-label="Antena" [(ngModel)]="data.antena" required name="antena">
+                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label">Cubre Maletero</label>
+                    <mat-radio-group aria-label="Cubre Maletero" [(ngModel)]="data.cubre_maletero" required name="cubre_maletero">
+                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+
+            </div>
+
+
+
         </div>
         <div class="inventario-bloque b12">
             <mat-slider thumbLabel vertical [displayWith]="formatLabel" tickInterval="1000" step="1000" min="0" max="100000" aria-label="units"></mat-slider>
