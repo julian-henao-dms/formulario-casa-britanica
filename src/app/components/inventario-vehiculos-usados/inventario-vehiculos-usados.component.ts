@@ -7,7 +7,8 @@ import { InventarioVehiculosUsados } from './interfaces/inventario-vehiculos-usa
   styleUrls: ['./inventario-vehiculos-usados.component.scss']
 })
 export class InventarioVehiculosUsadosComponent implements OnInit {
-
+  si = 1;
+  no = 0;
   gasolina = 1;
   diesel = 0;
   automatica = 1;
@@ -54,14 +55,23 @@ export class InventarioVehiculosUsadosComponent implements OnInit {
       marca_llanta_tras_izq: '',
       marca_llanta_tras_der: '',
       observacion_llanta: '',
-      rin: '' ,
-      tapa: '',
-      marca_rines_tapa: '',
+      rin_del_der: '' ,
+      tapa_del_der: '',
+      marca_rines_del_der: '',
+      rin_del_izq: '' ,
+      tapa_del_izq: '',
+      marca_rines_del_izq: '',
+      rin_tras_der: '' ,
+      tapa_tras_der: '',
+      marca_rines_tras_der: '',
+      rin_tras_izq: '' ,
+      tapa_tras_izq: '',
+      marca_rines_tras_izq: '',
       observacion_rines: '',
       matricula: 0,
       soat: 0,
       rtm: 0,
-      observaciones_documentos: '',
+      observacion_documentos: '',
       llaves:  0,
       repuesto_llaves:  0,
       manual: 0,
