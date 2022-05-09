@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InventarioVehiculosUsados } from './interfaces/inventario-vehiculos-usados';
+import {ThemePalette} from '@angular/material/core';
+import {ProgressBarMode} from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-inventario-vehiculos-usados',
@@ -7,6 +9,14 @@ import { InventarioVehiculosUsados } from './interfaces/inventario-vehiculos-usa
   styleUrls: ['./inventario-vehiculos-usados.component.scss']
 })
 export class InventarioVehiculosUsadosComponent implements OnInit {
+
+  formatLabel(value: number) {
+    if (value >= 1000) {
+      return Math.round(value / 1000) + 'k';
+    }
+    return value;
+  }
+
   si = 1;
   no = 0;
   gasolina = 1;
@@ -20,6 +30,11 @@ export class InventarioVehiculosUsadosComponent implements OnInit {
   nb = 0;
   hb = 1;
   qp = 2;
+
+  color: ThemePalette = 'primary';
+  mode: ProgressBarMode = 'determinate';
+  value = 50;
+  bufferValue = 75;
 
   public data: InventarioVehiculosUsados;
 
@@ -77,8 +92,8 @@ export class InventarioVehiculosUsadosComponent implements OnInit {
       manual: 0,
       encendedor: 0,
       cruceta: 0,
-      item_llave: 0,
       trinquete_reversible: 0,
+      item_llave: 0,
       gato: 0,
       kit_herramientas: 0,
       antena: 0,

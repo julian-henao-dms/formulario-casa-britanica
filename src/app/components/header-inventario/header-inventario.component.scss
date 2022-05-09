@@ -9,10 +9,6 @@
     border-radius: 0;
 }
 
-.title-container-cb h1 {
-    color: #fff;
-}
-
 .header-info-cb .codigo-revision-fecha li {
     color: #fff;
 }
@@ -25,4 +21,36 @@ form-casa-britanica {
 
 .cb-full-width {
     width: 100%;
+}
+
+.logo-cb {
+    width: 275px;
+}
+
+ul.codigo-revision-fecha>li {}
+
+ul.codigo-revision-fecha>li>span {
+    margin-left: 0.5em;
+}
+
+h1.title-cb {
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 800px) {
+    .header-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .title-container-cb h1 {
+        color: #fff;
+        text-align: center;
+        margin-top: 0.5em;
+    }
+    ul.codigo-revision-fecha {
+        list-style: none;
+        padding-left: 0;
+    }
 }

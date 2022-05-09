@@ -1,6 +1,6 @@
 <mat-card>
     <form (ngSubmit)="onSubmit(data)" #inventarioVehiculoUsadoForm="ngForm">
-        <div>
+        <div class="inventario-bloque b1">
             <mat-form-field appearance="fill">
                 <mat-label>Consignación:</mat-label>
                 <input matInput [(ngModel)]="data.consignacion" placeholder="Consignación" name="consignacion" value="400000">
@@ -22,7 +22,7 @@
                 <input matInput [(ngModel)]="data.interno" placeholder="#Interno" name="interno" value="AS5452">
             </mat-form-field>
         </div>
-        <div>
+        <div class="inventario-bloque b2">
             <mat-form-field appearance="fill">
                 <mat-label>Asesor:</mat-label>
                 <input matInput [(ngModel)]="data.asesor" placeholder="Asesor" name="asesor" value="Juan Perez">
@@ -44,7 +44,7 @@
                 <input matInput type="time" placeholder="Hora" [(ngModel)]="data.hora" required name="hora">
             </mat-form-field>
         </div>
-        <div>
+        <div class="inventario-bloque b3">
             <mat-form-field appearance="fill">
                 <mat-label>Marca:</mat-label>
                 <input matInput [(ngModel)]="data.consignacion" placeholder="Marca" name="marca" value="Toyota">
@@ -58,7 +58,7 @@
                 <input matInput [(ngModel)]="data.otros" placeholder="Modelo" name="modelo" value="1988">
             </mat-form-field>
         </div>
-        <div>
+        <div class="inventario-bloque b4">
             <section class="example-section">
                 <label id="cbradio-group-label">Combustible</label>
                 <mat-radio-group aria-label="Combustible" [(ngModel)]="data.combustible" required name="combustible">
@@ -80,7 +80,7 @@
                 </mat-radio-group>
             </section>
         </div>
-        <div>
+        <div class="inventario-bloque b5">
             <mat-form-field appearance="fill">
                 <mat-label>Color:</mat-label>
                 <input matInput [(ngModel)]="data.color" placeholder="Color" name="color" value="Rojo">
@@ -98,7 +98,7 @@
                 </mat-radio-group>
             </section>
         </div>
-        <div>
+        <div class="inventario-bloque b6">
             <section class="example-section">
                 <label id="cbradio-group-label" class="example-margin">Cojineria</label>
                 <mat-radio-group aria-label="Cojineria" [(ngModel)]="data.cojineria" required name="cojineria">
@@ -115,7 +115,7 @@
                 </mat-radio-group>
             </section>
         </div>
-        <div>
+        <div class="inventario-bloque b7">
             <mat-form-field appearance="fill">
                 <mat-label>Seleccione un estado</mat-label>
                 <mat-select>
@@ -131,7 +131,7 @@
                 </mat-select>
             </mat-form-field>
         </div>
-        <div>
+        <div class="inventario-bloque b8">
             <h3>Porcentaje Vida LLantas(%)</h3>
             <mat-form-field appearance="fill">
                 <mat-label>Delantera Izquierda:</mat-label>
@@ -171,7 +171,7 @@
             </mat-form-field>
         </div>
 
-        <div>
+        <div class="inventario-bloque b9">
 
             <div>
                 <section class="example-section">
@@ -222,7 +222,7 @@
                 <textarea matInput placeholder="Observación rines" [(ngModel)]="data.observacion_rines" name="observacion_rines"></textarea>
             </mat-form-field>
         </div>
-        <div>
+        <div class="inventario-bloque b10">
             <h3>Documentos</h3>
             <div>
                 <section class="example-section">
@@ -252,7 +252,7 @@
                 </mat-form-field>
             </div>
         </div>
-        <div>
+        <div class="inventario-bloque b11">
             <section class="example-section">
                 <label id="cbradio-group-label">Llaves</label>
                 <mat-radio-group aria-label="Llaves" [(ngModel)]="data.llaves" required name="llaves">
@@ -331,7 +331,8 @@
                 </mat-radio-group>
             </section>
         </div>
-        <div>
+        <div class="inventario-bloque b12">
+            <mat-slider thumbLabel vertical [displayWith]="formatLabel" tickInterval="1000" step="1000" min="0" max="100000" aria-label="units"></mat-slider>
             <mat-form-field appearance="fill">
                 <mat-label>Marca Batería:</mat-label>
                 <input matInput [(ngModel)]="data.marca_bateria" placeholder="Marca Batería" name="marca_bateria" value="Acme">
@@ -341,7 +342,7 @@
                 <input matInput [(ngModel)]="data.ref_bateria" placeholder="Referencia Batería" name="ref_bateria" value="Acme">
             </mat-form-field>
         </div>
-        <div>
+        <div class="inventario-bloque b13">
             <mat-form-field appearance="fill">
                 <mat-label>Marca Radio:</mat-label>
                 <input matInput [(ngModel)]="data.marca_radio" placeholder="Marca Radio" name="marca_radio" value="Acme">
@@ -351,7 +352,7 @@
                 <input matInput [(ngModel)]="data.ref_radio" placeholder="Referencia Radio" name="ref_radio" value="Acme">
             </mat-form-field>
         </div>
-        <div>
+        <div class="inventario-bloque b14">
             <p>
                 En caso de dejar objetos personales o accesorios adicionales no tenidos en cuenta dentro del inventario, favor notificar a quien lo realiza para dejarlo escrito, en caso contrario el concesionario no se hace responsable de los mismos.
             </p>
@@ -360,7 +361,7 @@
                 <textarea matInput placeholder="Observaciones" [(ngModel)]="data.observaciones" name="observaciones"></textarea>
             </mat-form-field>
         </div>
-        <div>
+        <div class="inventario-bloque b14">
             <div>
                 <mat-form-field appearance="fill">
                     <mat-label>Nombre de quien entrega:</mat-label>

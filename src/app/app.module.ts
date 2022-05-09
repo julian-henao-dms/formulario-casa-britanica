@@ -27,6 +27,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatSliderModule } from '@angular/material/slider';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     ReactiveFormsModule,
     MatExpansionModule,
     MatNativeDateModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
