@@ -13,14 +13,21 @@ export class InventarioVehiculosUsadosComponent implements OnInit {
   autoTicks = false;
   disabled = false;
   invert = false;
-  max = 1.0;
+  max = 1;
   min = 0.0;
-  showTicks = false;
-  step = 1;
-  thumbLabel = false;
+  showTicks = true;
+  step = 0.1;
+  thumbLabel = true;
   value = 0;
   vertical = false;
   tickInterval = 1;
+  formatLabel(value: number) {
+    if (value > 1) {
+      return Math.round(value / 0.1) + '';
+    }
+
+    return value;
+  }
 
   si = 1;
   no = 0;
