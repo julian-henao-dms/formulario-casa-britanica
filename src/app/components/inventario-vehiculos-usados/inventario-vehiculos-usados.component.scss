@@ -40,6 +40,12 @@ label.cbradio-group-label {
     justify-content: space-between;
 }
 
+.inventario-bloque.b8 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
 .inventario-bloque .radio-options-cb {
     width: 100%;
 }
@@ -49,10 +55,78 @@ label.cbradio-group-label {
     justify-content: space-around;
 }
 
+figure.vistas-vehiculo {
+    max-width: 50%;
+}
+
+figure.vistas-vehiculo img {
+    width: 100%;
+}
+
+mat-form-field.select-estado {
+    // width: 50%;
+}
+
+.inventario-bloque.b9 {
+    display: flex;
+    flex-direction: column;
+}
+
+.bloque-rin-tapa-marca {
+    display: flex;
+}
+
+.inventario-bloque.b12 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inventario-bloque.b14 {
+    display: flex;
+    flex-direction: column;
+}
+
+.inventario-bloque.b15 {
+    display: flex;
+    flex-direction: column;
+}
+
+.datos-entrega,
+.datos-recogida {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-registro {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-form-cb {
+    background-color: #b50411;
+    color: #fff;
+}
+
+.group-field-img {
+    width: 50%;
+}
+
 @media (max-width: 800px) {
     .inventario-bloque {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .datos-entrega,
+    .datos-recogida {
+        display: flex;
+        flex-direction: column;
+        mat-form-field {
+            width: 100%;
+        }
+    }
+    .porcentaje-llanta {
+        display: flex;
+        flex-direction: column;
     }
 }

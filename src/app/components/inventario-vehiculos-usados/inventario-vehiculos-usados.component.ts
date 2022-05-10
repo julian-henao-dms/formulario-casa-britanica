@@ -10,12 +10,17 @@ import {ProgressBarMode} from '@angular/material/progress-bar';
 })
 export class InventarioVehiculosUsadosComponent implements OnInit {
 
-  formatLabel(value: number) {
-    if (value >= 1000) {
-      return Math.round(value / 1000) + 'k';
-    }
-    return value;
-  }
+  autoTicks = false;
+  disabled = false;
+  invert = false;
+  max = 1.0;
+  min = 0.0;
+  showTicks = false;
+  step = 1;
+  thumbLabel = false;
+  value = 0;
+  vertical = false;
+  tickInterval = 1;
 
   si = 1;
   no = 0;
@@ -31,10 +36,11 @@ export class InventarioVehiculosUsadosComponent implements OnInit {
   hb = 1;
   qp = 2;
 
-  color: ThemePalette = 'primary';
-  mode: ProgressBarMode = 'determinate';
-  value = 50;
-  bufferValue = 75;
+
+  // color: ThemePalette = 'primary';
+  // mode: ProgressBarMode = 'determinate';
+  // value = 50;
+  // bufferValue = 75;
 
   public data: InventarioVehiculosUsados;
 
@@ -120,6 +126,14 @@ export class InventarioVehiculosUsadosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+getSliderTickInterval(): number | 'auto' {
+    if (this.showTicks) {
+      return this.autoTicks ? 'auto' : this.tickInterval;
+    }
+
+    return 0;
+  }
   onSubmit(data: InventarioVehiculosUsados){
     console.log(this.data);
 
