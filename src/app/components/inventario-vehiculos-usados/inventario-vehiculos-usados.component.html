@@ -1,6 +1,7 @@
 <mat-card>
     <form (ngSubmit)="onSubmit(data)" #inventarioVehiculoUsadoForm="ngForm">
-        <div class="inventario-bloque b1">
+
+        <mat-card class="mat-card-cb">
             <mat-form-field appearance="fill">
                 <mat-label>Consignación:</mat-label>
                 <input matInput [(ngModel)]="data.consignacion" placeholder="Consignación" name="consignacion" value="400000">
@@ -9,6 +10,7 @@
                 <mat-label>Retoma:</mat-label>
                 <input matInput [(ngModel)]="data.retoma" placeholder="Retoma" name="retoma" value="Retoma">
             </mat-form-field>
+
             <mat-form-field appearance="fill">
                 <mat-label>Otros:</mat-label>
                 <input matInput [(ngModel)]="data.otros" placeholder="Otros" name="otros" value="Otros">
@@ -21,8 +23,6 @@
                 <mat-label># Interno:</mat-label>
                 <input matInput [(ngModel)]="data.interno" placeholder="#Interno" name="interno" value="AS5452">
             </mat-form-field>
-        </div>
-        <div class="inventario-bloque b2">
             <mat-form-field appearance="fill">
                 <mat-label>Asesor:</mat-label>
                 <input matInput [(ngModel)]="data.asesor" placeholder="Asesor" name="asesor" value="Juan Perez">
@@ -38,13 +38,10 @@
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-
             <mat-form-field appearance="fill">
                 <mat-label>Hora:</mat-label>
                 <input matInput type="time" placeholder="Hora" [(ngModel)]="data.hora" required name="hora">
             </mat-form-field>
-        </div>
-        <div class="inventario-bloque b3">
             <mat-form-field appearance="fill">
                 <mat-label>Marca:</mat-label>
                 <input matInput [(ngModel)]="data.consignacion" placeholder="Marca" name="marca" value="Toyota">
@@ -57,216 +54,243 @@
                 <mat-label>Modelo:</mat-label>
                 <input matInput [(ngModel)]="data.modelo" placeholder="Modelo" name="modelo" value="1988">
             </mat-form-field>
-        </div>
-        <div class="inventario-bloque b4">
-            <section class="example-section radio-options-cb radio-options-cb">
-                <label class="cbradio-group-label">Combustible</label>
-                <mat-radio-group aria-label="Combustible" [(ngModel)]="data.combustible" required name="combustible">
-                    <mat-radio-button class="cb-radio-button" [value]="gasolina">Gasolina</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="diesel">Diesel</mat-radio-button>
-                </mat-radio-group>
-            </section>
+        </mat-card>
 
-            <mat-form-field appearance="fill">
-                <mat-label>Kilometraje:</mat-label>
-                <input matInput [(ngModel)]="data.kilometraje" placeholder="Kilometraje" name="kilometraje" value="Toyota">
-            </mat-form-field>
+        <div class="container-group-a-cb">
+            <mat-card class="mat-card-cb-b2">
 
-            <section class="example-section radio-options-cb radio-options-cb">
-                <label class="cbradio-group-label" class="example-margin">Transmisión</label>
-                <mat-radio-group aria-label="Transmisión" [(ngModel)]="data.transmision" required name="transmision">
-                    <mat-radio-button class="cb-radio-button" [value]="mecanica">Mecánica</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="automatica">Automática</mat-radio-button>
-                </mat-radio-group>
-            </section>
-        </div>
-        <div class="inventario-bloque b5">
-            <mat-form-field appearance="fill">
-                <mat-label>Color:</mat-label>
-                <input matInput [(ngModel)]="data.color" placeholder="Color" name="color" value="Rojo">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Cilindraje:</mat-label>
-                <input matInput [(ngModel)]="data.cilindraje" placeholder="Cilindraje" name="cilindraje" value="3CC">
-            </mat-form-field>
+                <section class="example-section radio-options-cb radio-options-cb">
+                    <label class="cbradio-group-label">Combustible</label>
+                    <mat-radio-group aria-label="Combustible" [(ngModel)]="data.combustible" required name="combustible">
+                        <mat-radio-button class="cb-radio-button" [value]="gasolina">Gasolina</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="diesel">Diesel</mat-radio-button>
+                    </mat-radio-group>
+                </section>
 
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label" class="example-margin">Tracción</label>
-                <mat-radio-group aria-label="Tracción" [(ngModel)]="data.traccion" required name="traccion">
-                    <mat-radio-button class="cb-radio-button" [value]="t4x2">4X2</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="t4x4">4X4</mat-radio-button>
-                </mat-radio-group>
-            </section>
-        </div>
-        <div class="inventario-bloque b6">
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label" class="example-margin">Cojineria</label>
-                <mat-radio-group aria-label="Cojineria" [(ngModel)]="data.cojineria" required name="cojineria">
-                    <mat-radio-button class="cb-radio-button" [value]="tela">Tela</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="cuero">Cuero</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb"></section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label" class="example-margin">Linea</label>
-                <mat-radio-group aria-label="Linea" [(ngModel)]="data.linea" required name="linea">
-                    <mat-radio-button class="cb-radio-button" [value]="nb">NB</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="hb">HB</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="qp">QP</mat-radio-button>
-                </mat-radio-group>
-            </section>
-        </div>
-        <div class="inventario-bloque b7">
-            <figure class="vistas-vehiculo">
-                <img src="./assets/images/vistas-coche-cb.jpg" alt="Vistas Vehículo">
-            </figure>
-            <div class="group-field-img">
-                <div class="select-estado-container">
-                    <mat-form-field class="select-estado" appearance="fill">
-                        <mat-label>Seleccione un estado</mat-label>
-                        <mat-select>
-                            <mat-option>Ninguno</mat-option>
-                            <mat-option value="rayado_leve">Rayado Leve</mat-option>
-                            <mat-option value="rayado_fuerte">Rayado Fuerte</mat-option>
-                            <mat-option value="golpe_leve">Golpe Leve</mat-option>
-                            <mat-option value="golpe_fuerte">Golpe Fuerte</mat-option>
-                            <mat-option value="descuadre">Descuadre</mat-option>
-                            <mat-option value="corrosion">Corrosión</mat-option>
-                            <mat-option value="fisurado">Fisurado</mat-option>
-                            <mat-option value="pintura_manchada">Pintura Manchada</mat-option>
-                        </mat-select>
-                    </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Kilometraje:</mat-label>
+                    <input matInput [(ngModel)]="data.kilometraje" placeholder="Kilometraje" name="kilometraje" value="Toyota">
+                </mat-form-field>
+
+                <section class="example-section radio-options-cb radio-options-cb">
+                    <label class="cbradio-group-label" class="example-margin">Transmisión</label>
+                    <mat-radio-group aria-label="Transmisión" [(ngModel)]="data.transmision" required name="transmision">
+                        <mat-radio-button class="cb-radio-button" [value]="mecanica">Mecánica</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="automatica">Automática</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+
+            </mat-card>
+            <mat-card class="mat-card-cb-b3">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Color:</mat-label>
+                    <input matInput [(ngModel)]="data.color" placeholder="Color" name="color" value="Rojo">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Cilindraje:</mat-label>
+                    <input matInput [(ngModel)]="data.cilindraje" placeholder="Cilindraje" name="cilindraje" value="3CC">
+                </mat-form-field>
+
+                <section class="example-section radio-options-cb">
+                    <label class="cbradio-group-label" class="example-margin">Tracción</label>
+                    <mat-radio-group aria-label="Tracción" [(ngModel)]="data.traccion" required name="traccion">
+                        <mat-radio-button class="cb-radio-button" [value]="t4x2">4X2</mat-radio-button>
+                        <mat-radio-button class="cb-radio-button" [value]="t4x4">4X4</mat-radio-button>
+                    </mat-radio-group>
+                </section>
+
+            </mat-card>
+            <mat-card class="card-cb">
+
+                <div class="inventario-bloque b6">
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label" class="example-margin">Cojineria</label>
+                        <mat-radio-group aria-label="Cojineria" [(ngModel)]="data.cojineria" required name="cojineria">
+                            <mat-radio-button class="cb-radio-button" [value]="tela">Tela</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="cuero">Cuero</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+                    <section class="example-section radio-options-cb"></section>
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label" class="example-margin">Linea</label>
+                        <mat-radio-group aria-label="Linea" [(ngModel)]="data.linea" required name="linea">
+                            <mat-radio-button class="cb-radio-button" [value]="nb">NB</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="hb">HB</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="qp">QP</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
                 </div>
+            </mat-card>
+        </div>
+        <div class="container-group-cb">
+            <mat-card class="mat-card-cb-img card-cb-vistas">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title></mat-card-title>
+                    <mat-card-subtitle>Vistas Vehículo</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="./assets/images/vistas-coche-cb.jpg" alt="Vistas Vehículo">
+                <mat-card-content>
+
+                </mat-card-content>
+
+            </mat-card>
+
+            <mat-card class="card-cb card-cb-vistas">
+                <div class="inventario-bloque b7">
+
+                    <div class="group-field-img">
+                        <div class="select-estado-container">
+                            <mat-form-field class="select-estado" appearance="fill">
+                                <mat-label>Seleccione un estado</mat-label>
+                                <mat-select>
+                                    <mat-option>Ninguno</mat-option>
+                                    <mat-option value="rayado_leve">Rayado Leve</mat-option>
+                                    <mat-option value="rayado_fuerte">Rayado Fuerte</mat-option>
+                                    <mat-option value="golpe_leve">Golpe Leve</mat-option>
+                                    <mat-option value="golpe_fuerte">Golpe Fuerte</mat-option>
+                                    <mat-option value="descuadre">Descuadre</mat-option>
+                                    <mat-option value="corrosion">Corrosión</mat-option>
+                                    <mat-option value="fisurado">Fisurado</mat-option>
+                                    <mat-option value="pintura_manchada">Pintura Manchada</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
 
 
 
-                <div class="porcentajes">
-                    <h3 class="titulo-p-llanta">Porcentaje Vida LLantas(%)</h3>
-                    <div class="inventario-bloque b8">
+                        <div class="porcentajes">
+                            <h3 class="titulo-p-llanta">Porcentaje Vida LLantas(%)</h3>
+                            <div class="inventario-bloque b8">
 
-                        <div class="porcentaje-llanta">
-                            <mat-form-field appearance="fill">
-                                <mat-label>Delantera Izquierda:</mat-label>
-                                <input matInput [(ngModel)]="data.vida_llanta_del_izq" placeholder="Delantera Izquierda" name="vida_llanta_del_izq" value="20">
-                            </mat-form-field>
-                            <mat-form-field appearance="fill">
-                                <mat-label>Marca Del. Izq:</mat-label>
-                                <input matInput [(ngModel)]="data.marca_llanta_del_izq" placeholder="Marca Del. Izq" name="marca_llanta_del_izq" value="Micheline">
-                            </mat-form-field>
+                                <div class="porcentaje-llanta">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Delantera Izquierda:</mat-label>
+                                        <input matInput [(ngModel)]="data.vida_llanta_del_izq" placeholder="Delantera Izquierda" name="vida_llanta_del_izq" value="20">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Marca Del. Izq:</mat-label>
+                                        <input matInput [(ngModel)]="data.marca_llanta_del_izq" placeholder="Marca Del. Izq" name="marca_llanta_del_izq" value="Micheline">
+                                    </mat-form-field>
+                                </div>
+                                <div class="porcentaje-llanta">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Delantera Derecha:</mat-label>
+                                        <input matInput [(ngModel)]="data.vida_llanta_del_der" placeholder="Delantera derecha" name="vida_llanta_del_der" value="50">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Marca Del. Der:</mat-label>
+                                        <input matInput [(ngModel)]="data.marca_llanta_del_der" placeholder="Marca Del. Der" name="marca_llanta_del_der" value="Goodyeard">
+                                    </mat-form-field>
+                                </div>
+                                <div class="porcentaje-llanta">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Trasera Derecha:</mat-label>
+                                        <input matInput [(ngModel)]="data.vida_llanta_tras_der" placeholder="Trasera Derecha" name="vida_llanta_tras_der" value="50">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Marca Tras. Der:</mat-label>
+                                        <input matInput [(ngModel)]="data.marca_llanta_tras_der" placeholder="Marca Tras. Der" name="marca_llanta_tras_der" value="Goodyeard">
+                                    </mat-form-field>
+                                </div>
+                                <div class="porcentaje-llanta">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Trasera Izquierda:</mat-label>
+                                        <input matInput [(ngModel)]="data.vida_llanta_tras_izq" placeholder="Trasera Izquierda" name="vida_llanta_tras_izq" value="50">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Marca Tras. Izq:</mat-label>
+                                        <input matInput [(ngModel)]="data.marca_llanta_tras_izq" placeholder="Marca Tras. Izq" name="marca_llanta_tras_izq" value="Goodyeard">
+                                    </mat-form-field>
+                                </div>
+                                <div class="porcentaje-llanta">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Repuesto:</mat-label>
+                                        <input matInput [(ngModel)]="data.vida_llanta_repuesto" placeholder="Repuesto" name="vida_llanta_repuesto" value="50">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Marca Repuesto:</mat-label>
+                                        <input matInput [(ngModel)]="data.marca_llanta_repuesto" placeholder="Marca Repuesto" name="marca_llanta_repuesto" value="Goodyeard">
+                                    </mat-form-field>
+                                </div>
+                                <div class="porcentaje-llanta">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Observaciones</mat-label>
+                                        <textarea matInput placeholder="Observaciones llantas" [(ngModel)]="data.observacion_llanta" name="observacion_llanta"></textarea>
+                                    </mat-form-field>
+                                </div>
+
+
+
+
+                            </div>
                         </div>
-                        <div class="porcentaje-llanta">
-                            <mat-form-field appearance="fill">
-                                <mat-label>Delantera Derecha:</mat-label>
-                                <input matInput [(ngModel)]="data.vida_llanta_del_der" placeholder="Delantera derecha" name="vida_llanta_del_der" value="50">
-                            </mat-form-field>
-                            <mat-form-field appearance="fill">
-                                <mat-label>Marca Del. Der:</mat-label>
-                                <input matInput [(ngModel)]="data.marca_llanta_del_der" placeholder="Marca Del. Der" name="marca_llanta_del_der" value="Goodyeard">
-                            </mat-form-field>
-                        </div>
-                        <div class="porcentaje-llanta">
-                            <mat-form-field appearance="fill">
-                                <mat-label>Trasera Derecha:</mat-label>
-                                <input matInput [(ngModel)]="data.vida_llanta_tras_der" placeholder="Trasera Derecha" name="vida_llanta_tras_der" value="50">
-                            </mat-form-field>
-                            <mat-form-field appearance="fill">
-                                <mat-label>Marca Tras. Der:</mat-label>
-                                <input matInput [(ngModel)]="data.marca_llanta_tras_der" placeholder="Marca Tras. Der" name="marca_llanta_tras_der" value="Goodyeard">
-                            </mat-form-field>
-                        </div>
-                        <div class="porcentaje-llanta">
-                            <mat-form-field appearance="fill">
-                                <mat-label>Trasera Izquierda:</mat-label>
-                                <input matInput [(ngModel)]="data.vida_llanta_tras_izq" placeholder="Trasera Izquierda" name="vida_llanta_tras_izq" value="50">
-                            </mat-form-field>
-                            <mat-form-field appearance="fill">
-                                <mat-label>Marca Tras. Izq:</mat-label>
-                                <input matInput [(ngModel)]="data.marca_llanta_tras_izq" placeholder="Marca Tras. Izq" name="marca_llanta_tras_izq" value="Goodyeard">
-                            </mat-form-field>
-                        </div>
-                        <div class="porcentaje-llanta">
-                            <mat-form-field appearance="fill">
-                                <mat-label>Repuesto:</mat-label>
-                                <input matInput [(ngModel)]="data.vida_llanta_repuesto" placeholder="Repuesto" name="vida_llanta_repuesto" value="50">
-                            </mat-form-field>
-                            <mat-form-field appearance="fill">
-                                <mat-label>Marca Repuesto:</mat-label>
-                                <input matInput [(ngModel)]="data.marca_llanta_repuesto" placeholder="Marca Repuesto" name="marca_llanta_repuesto" value="Goodyeard">
-                            </mat-form-field>
-                        </div>
-                        <div class="porcentaje-llanta">
+
+
+                        <div class="inventario-bloque b9">
+
+                            <div class="bloque-rin-tapa-marca">
+                                <section class="example-section radio-options-cb">
+                                    <label class="example-margin">Delantero Derecho:</label>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="data.rin_del_der" name="rin_del_der">Rin</mat-checkbox>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="data.tapa_del_der" name="tapa_del_der">Tapa</mat-checkbox>
+                                </section>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Marca Del. Der:</mat-label>
+                                    <input matInput [(ngModel)]="data.marca_rines_del_der" placeholder="Marca Rin Del. Der" name="marca_rines_del_der" value="Goodyeard">
+                                </mat-form-field>
+                            </div>
+                            <div class="bloque-rin-tapa-marca">
+                                <section class="example-section radio-options-cb">
+                                    <label class="example-margin">Delantero Izquierdo:</label>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="data.rin_del_izq" name="rin_del_izq">Rin</mat-checkbox>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="data.tapa_del_izq" name="tapa_del_izq">Tapa</mat-checkbox>
+                                </section>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Marca Del. Izq:</mat-label>
+                                    <input matInput [(ngModel)]="data.marca_rines_del_izq" placeholder="Marca Rin Del. Izq" name="marca_rines_del_izq" value="Goodyeard">
+                                </mat-form-field>
+                            </div>
+                            <div class="bloque-rin-tapa-marca">
+                                <section class="example-section radio-options-cb">
+                                    <label class="example-margin">Trasero Derecho:</label>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="data.rin_tras_der" name="rin_tras_der">Rin</mat-checkbox>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="data.tapa_tras_der" name="tapa_tras_der">Tapa</mat-checkbox>
+                                </section>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Marca Tras. Der:</mat-label>
+                                    <input matInput [(ngModel)]="data.marca_rines_tras_der" placeholder="Marca Rin Tras. Der" name="marca_rines_tras_der" value="Goodyeard">
+                                </mat-form-field>
+                            </div>
+                            <div class="bloque-rin-tapa-marca">
+                                <section class="example-section radio-options-cb">
+                                    <label class="example-margin">Trasero Izquierdo:</label>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="data.rin_tras_izq" name="rin_tras_izq">Rin</mat-checkbox>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="data.tapa_tras_izq" name="tapa_tras_izq">Tapa</mat-checkbox>
+                                </section>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Marca Tras. Izq:</mat-label>
+                                    <input matInput [(ngModel)]="data.marca_rines_tras_izq" placeholder="Marca Rin Tras. Izq" name="marca_rines_tras_izq" value="Goodyeard">
+                                </mat-form-field>
+                            </div>
                             <mat-form-field class="example-full-width" appearance="fill">
-                                <mat-label>Observaciones</mat-label>
-                                <textarea matInput placeholder="Observaciones llantas" [(ngModel)]="data.observacion_llanta" name="observacion_llanta"></textarea>
+                                <mat-label>Observaciones rines</mat-label>
+                                <textarea matInput placeholder="Observación rines" [(ngModel)]="data.observacion_rines" name="observacion_rines"></textarea>
                             </mat-form-field>
                         </div>
-
-
-
-
                     </div>
                 </div>
-
-
-                <div class="inventario-bloque b9">
-
-                    <div class="bloque-rin-tapa-marca">
-                        <section class="example-section radio-options-cb">
-                            <label class="example-margin">Delantero Derecho:</label>
-                            <mat-checkbox class="example-margin" [(ngModel)]="data.rin_del_der" name="rin_del_der"></mat-checkbox>
-                            <mat-checkbox class="example-margin" [(ngModel)]="data.tapa_del_der" name="tapa_del_der"></mat-checkbox>
-                        </section>
-                        <mat-form-field appearance="fill">
-                            <mat-label>Marca Del. Der:</mat-label>
-                            <input matInput [(ngModel)]="data.marca_rines_del_der" placeholder="Marca Rin Del. Der" name="marca_rines_del_der" value="Goodyeard">
-                        </mat-form-field>
-                    </div>
-                    <div class="bloque-rin-tapa-marca">
-                        <section class="example-section radio-options-cb">
-                            <label class="example-margin">Delantero Izquierdo:</label>
-                            <mat-checkbox class="example-margin" [(ngModel)]="data.rin_del_izq" name="rin_del_izq"></mat-checkbox>
-                            <mat-checkbox class="example-margin" [(ngModel)]="data.tapa_del_izq" name="tapa_del_izq"></mat-checkbox>
-                        </section>
-                        <mat-form-field appearance="fill">
-                            <mat-label>Marca Del. Izq:</mat-label>
-                            <input matInput [(ngModel)]="data.marca_rines_del_izq" placeholder="Marca Rin Del. Izq" name="marca_rines_del_izq" value="Goodyeard">
-                        </mat-form-field>
-                    </div>
-                    <div class="bloque-rin-tapa-marca">
-                        <section class="example-section radio-options-cb">
-                            <label class="example-margin">Trasero Derecho:</label>
-                            <mat-checkbox class="example-margin" [(ngModel)]="data.rin_tras_der" name="rin_tras_der"></mat-checkbox>
-                            <mat-checkbox class="example-margin" [(ngModel)]="data.tapa_tras_der" name="tapa_tras_der"></mat-checkbox>
-                        </section>
-                        <mat-form-field appearance="fill">
-                            <mat-label>Marca Tras. Der:</mat-label>
-                            <input matInput [(ngModel)]="data.marca_rines_tras_der" placeholder="Marca Rin Tras. Der" name="marca_rines_tras_der" value="Goodyeard">
-                        </mat-form-field>
-                    </div>
-                    <div class="bloque-rin-tapa-marca">
-                        <section class="example-section radio-options-cb">
-                            <label class="example-margin">Trasero Izquierdo:</label>
-                            <mat-checkbox class="example-margin" [(ngModel)]="data.rin_tras_izq" name="rin_tras_izq"></mat-checkbox>
-                            <mat-checkbox class="example-margin" [(ngModel)]="data.tapa_tras_izq" name="tapa_tras_izq"></mat-checkbox>
-                        </section>
-                        <mat-form-field appearance="fill">
-                            <mat-label>Marca Tras. Izq:</mat-label>
-                            <input matInput [(ngModel)]="data.marca_rines_tras_izq" placeholder="Marca Rin Tras. Izq" name="marca_rines_tras_izq" value="Goodyeard">
-                        </mat-form-field>
-                    </div>
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Observaciones rines</mat-label>
-                        <textarea matInput placeholder="Observación rines" [(ngModel)]="data.observacion_rines" name="observacion_rines"></textarea>
-                    </mat-form-field>
-                </div>
-            </div>
+            </mat-card>
         </div>
 
-        <div class="documentos">
-            <h3>Documentos</h3>
-            <div class="inventario-bloque b10">
 
-                <div>
+        <mat-card class="card-cb">
+            <div class="documentos">
+                <h3>Documentos</h3>
+
+
+                <div class="content-field-documentos">
                     <section class="example-section radio-options-cb">
                         <label class="cbradio-group-label">Matrícula</label>
                         <mat-radio-group aria-label="Matricula" [(ngModel)]="data.matricula" required name="matricula">
@@ -294,109 +318,116 @@
                     </mat-form-field>
                 </div>
             </div>
-        </div>
 
-        <div class="inventario-bloque b11">
-            <div class="accesorios-radio-btn">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Llaves</label>
-                    <mat-radio-group aria-label="Llaves" [(ngModel)]="data.llaves" required name="llaves">
-                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Repuesto Llaves</label>
-                    <mat-radio-group aria-label="Repuesto Llaves" [(ngModel)]="data.repuesto_llaves" required name="repuesto_llaves">
-                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Manual</label>
-                    <mat-radio-group aria-label="Manual" [(ngModel)]="data.manual" required name="manual">
-                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                    </mat-radio-group>
-                </section>
+        </mat-card>
+
+        <mat-card class="card-cb">
+            <div class="inventario-bloque b11">
+                <div class="accesorios-radio-btn">
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label">Llaves</label>
+                        <mat-radio-group aria-label="Llaves" [(ngModel)]="data.llaves" required name="llaves">
+                            <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label">Repuesto Llaves</label>
+                        <mat-radio-group aria-label="Repuesto Llaves" [(ngModel)]="data.repuesto_llaves" required name="repuesto_llaves">
+                            <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label">Manual</label>
+                        <mat-radio-group aria-label="Manual" [(ngModel)]="data.manual" required name="manual">
+                            <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label">Encendedor</label>
+                        <mat-radio-group aria-label="Encendedor" [(ngModel)]="data.encendedor" required name="encendedor">
+                            <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+                </div>
+                <div class="accesorios-radio-btn">
+
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label">Cruceta</label>
+                        <mat-radio-group aria-label="Cruceta" [(ngModel)]="data.cruceta" required name="cruceta">
+                            <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label">Item Llave</label>
+                        <mat-radio-group aria-label="Item Llave" [(ngModel)]="data.item_llave" required name="item_llave">
+                            <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label">Trinquete Reversible</label>
+                        <mat-radio-group aria-label="Trinquete Reversible" [(ngModel)]="data.trinquete_reversible" required name="trinquete_reversible">
+                            <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label">Gato</label>
+                        <mat-radio-group aria-label="Gato" [(ngModel)]="data.gato" required name="gato">
+                            <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+
+                </div>
+                <div class="accesorios-radio-btn">
+
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label">Kit de Herramientas</label>
+                        <mat-radio-group aria-label="Kit de Herramientas" [(ngModel)]="data.kit_herramientas" required name="kit_herramientas">
+                            <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label">Antena</label>
+                        <mat-radio-group aria-label="Antena" [(ngModel)]="data.antena" required name="antena">
+                            <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+                    <section class="example-section radio-options-cb">
+                        <label class="cbradio-group-label">Cubre Maletero</label>
+                        <mat-radio-group aria-label="Cubre Maletero" [(ngModel)]="data.cubre_maletero" required name="cubre_maletero">
+                            <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+                            <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+                        </mat-radio-group>
+                    </section>
+
+
+                </div>
+                <div class="accesorios-radio-btn">
+
+                </div>
+
+
+
             </div>
-            <div class="accesorios-radio-btn">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Encendedor</label>
-                    <mat-radio-group aria-label="Encendedor" [(ngModel)]="data.encendedor" required name="encendedor">
-                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Cruceta</label>
-                    <mat-radio-group aria-label="Cruceta" [(ngModel)]="data.cruceta" required name="cruceta">
-                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Item Llave</label>
-                    <mat-radio-group aria-label="Item Llave" [(ngModel)]="data.item_llave" required name="item_llave">
-                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                    </mat-radio-group>
-                </section>
+        </mat-card>
+        <mat-card class="card-cb">
+            <div class="marca-referencia">
 
-            </div>
-            <div class="accesorios-radio-btn">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Trinquete Reversible</label>
-                    <mat-radio-group aria-label="Trinquete Reversible" [(ngModel)]="data.trinquete_reversible" required name="trinquete_reversible">
-                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Gato</label>
-                    <mat-radio-group aria-label="Gato" [(ngModel)]="data.gato" required name="gato">
-                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Kit de Herramientas</label>
-                    <mat-radio-group aria-label="Kit de Herramientas" [(ngModel)]="data.kit_herramientas" required name="kit_herramientas">
-                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                    </mat-radio-group>
-                </section>
-
-            </div>
-            <div class="accesorios-radio-btn">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Antena</label>
-                    <mat-radio-group aria-label="Antena" [(ngModel)]="data.antena" required name="antena">
-                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Cubre Maletero</label>
-                    <mat-radio-group aria-label="Cubre Maletero" [(ngModel)]="data.cubre_maletero" required name="cubre_maletero">
-                        <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
-                    </mat-radio-group>
-                </section>
-
-            </div>
-
-
-
-        </div>
-        <div class="marca-referencia">
-            <div class="nivel-gasolina">
                 <mat-label>Nivel de Gasolina:</mat-label>
                 <mat-slider class="example-margin" [disabled]="disabled" [invert]="invert" [max]="max" [min]="min" [step]="step" [thumbLabel]="thumbLabel" [tickInterval]="getSliderTickInterval()" [(ngModel)]="value" [vertical]="vertical" aria-labelledby="units" [displayWith]="formatLabel"
                     name="value">
                 </mat-slider>
-            </div>
-            <div class="inventario-bloque b12">
+
+                <!-- <div class="inventario-bloque b12"> -->
 
                 <mat-form-field appearance="fill">
                     <mat-label>Marca Batería:</mat-label>
@@ -406,8 +437,8 @@
                     <mat-label>Referencia Batería:</mat-label>
                     <input matInput [(ngModel)]="data.ref_bateria" placeholder="Referencia Batería" name="ref_bateria" value="Acme">
                 </mat-form-field>
-            </div>
-            <div class="inventario-bloque b13">
+                <!-- </div> -->
+                <!-- <div class="inventario-bloque b13"> -->
                 <mat-form-field appearance="fill">
                     <mat-label>Marca Radio:</mat-label>
                     <input matInput [(ngModel)]="data.marca_radio" placeholder="Marca Radio" name="marca_radio" value="Acme">
@@ -417,18 +448,23 @@
                     <input matInput [(ngModel)]="data.ref_radio" placeholder="Referencia Radio" name="ref_radio" value="Acme">
                 </mat-form-field>
             </div>
-        </div>
+            <!-- </div> -->
 
-        <div class="inventario-bloque b14">
-            <p>
-                En caso de dejar objetos personales o accesorios adicionales no tenidos en cuenta dentro del inventario, favor notificar a quien lo realiza para dejarlo escrito, en caso contrario el concesionario no se hace responsable de los mismos.
-            </p>
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Observaciones:</mat-label>
-                <textarea matInput placeholder="Observaciones" [(ngModel)]="data.observaciones" name="observaciones"></textarea>
-            </mat-form-field>
-        </div>
-        <div class="inventario-bloque b15">
+        </mat-card>
+        <mat-card class="card-cb card-observaciones">
+            <div class="inventario-bloque b14">
+                <p>
+                    En caso de dejar objetos personales o accesorios adicionales no tenidos en cuenta dentro del inventario, favor notificar a quien lo realiza para dejarlo escrito, en caso contrario el concesionario no se hace responsable de los mismos.
+                </p>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Observaciones:</mat-label>
+                    <textarea matInput placeholder="Observaciones" [(ngModel)]="data.observaciones" name="observaciones"></textarea>
+                </mat-form-field>
+            </div>
+        </mat-card>
+
+        <mat-card class="card-cb">
+
             <div class="datos-entrega">
                 <mat-form-field appearance="fill">
                     <mat-label>Nombre de quien entrega:</mat-label>
@@ -474,7 +510,9 @@
                     <input matInput [(ngModel)]="data.empleado_entrega" placeholder="Empleado quien entrega" name="empleado_entrega" value="Acme">
                 </mat-form-field>
             </div>
-        </div>
+
+        </mat-card>
+
         <div class="btn-registro">
             <button [disabled]="inventarioVehiculoUsadoForm.invalid" mat-button type="submit" class="btn-form-cb">Primary</button>
         </div>

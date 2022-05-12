@@ -27,7 +27,7 @@ mat-slider {
 }
 
 mat-form-field.mat-form-field {
-    width: 100%;
+    // width: 100%;
     margin: 0 0.5em;
 }
 
@@ -64,7 +64,7 @@ figure.vistas-vehiculo img {
 }
 
 mat-form-field.select-estado {
-    // width: 50%;
+    width: 100%;
 }
 
 .inventario-bloque.b9 {
@@ -74,6 +74,7 @@ mat-form-field.select-estado {
 
 .bloque-rin-tapa-marca {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .inventario-bloque.b12 {
@@ -95,6 +96,7 @@ mat-form-field.select-estado {
 .datos-recogida {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .btn-registro {
@@ -108,7 +110,70 @@ mat-form-field.select-estado {
 }
 
 .group-field-img {
+    width: 100%;
+}
+
+.card-cb {
+    margin-bottom: 1.2em;
+}
+
+.mat-card-cb {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.2em;
+    justify-content: space-between;
+    mat-form-field {
+        min-width: 18em;
+    }
+}
+
+.mat-card-cb-b2,
+.mat-card-cb-b3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1.2em;
+    mat-form-field {
+        min-width: 20em;
+    }
+}
+
+.mat-card-cb-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1.2em;
+}
+
+.content-field-documentos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.marca-referencia {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-observaciones {
     width: 50%;
+}
+
+.subgrupo-cb {
+    display: flex;
+}
+
+.container-group-cb {
+    display: flex;
+    // align-items: center;
+    justify-content: space-around;
+}
+
+.card-cb-vistas {
+    width: 100%;
 }
 
 @media (max-width: 800px) {
@@ -128,5 +193,26 @@ mat-form-field.select-estado {
     .porcentaje-llanta {
         display: flex;
         flex-direction: column;
+        width: 100%;
+    }
+    .container-group-cb {
+        display: flex;
+        flex-direction: column;
+    }
+    .bloque-rin-tapa-marca {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card-observaciones {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .mat-card-cb {
+        mat-form-field {
+            width: 100%;
+        }
     }
 }
