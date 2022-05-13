@@ -205,7 +205,16 @@ mat-form-field.select-estado {
         justify-content: center;
     }
     .card-observaciones {
+        width: 93%;
+    }
+    .marca-referencia mat-form-field {
         width: 100%;
+    }
+    .card-observaciones {
+        width: unset;
+    }
+    .card-cb-vistas {
+        width: unset;
     }
 }
 
